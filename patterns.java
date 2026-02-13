@@ -504,56 +504,61 @@ public static void main(String [] args){
 System.out.println(" ");
 System.out.println("NAME");
 a(n);s(n);m(n);a(n);
+        for (int i = 0; i < n; i++) {
+            //a
+            for (int j = 0; j < n; j++) {
+                if ((j == n / 4 && i >= n / 4) ||
+                    (j == 3 * n / 4 && i >= n / 4) ||
+                    (i == n / 2 && j >= n / 4 && j <= 3 * n / 4) ||
+                    (i + j == n / 2 && i - j <= 0) ||
+                    (i - j == -n / 2 && i + j <= n - 1)) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.print("   ");
+            //s
+            int ns = 16;
+            for (int j = 0; j < ns; j++) {
+                if ((i - j == 0 && j >= ns / 4 && j <= 3 * ns / 4) ||
+                    (i + j == ns / 2 && j >= ns / 4 && j <= ns / 2) ||
+                    (i - j == -ns / 2 && j >= ns / 2 && j <= 3 * ns / 4) ||
+                    (i + j == 3 * ns / 2 && j >= ns / 2 && j <= 3 * ns / 4) ||
+                    (i - j == ns / 2 && j >= ns / 4 && j <= ns / 2)) {
+                    System.out.print(" *");
+                } else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.print("   ");
+            //m
+            for (int j = 0; j < n; j++) {
+                if ((j == 0) ||
+                    (j == n - 1) ||
+                    (i - j == 0 && j <= n / 2) ||
+                    (i + j == n - 1 && j >= n / 2)) {
 
-
-for(int i=0;i<n;i++){
-
-    // A
-    for(int j=0;j<n;j++){
-        if((j==n/4&&i>=n/4)||(j==3*n/4&&i>=n/4)||(i==n/2&&j>=n/4&&j<=3*n/4)||(i+j==n/2&&i-j<=0)|| (i-j==-n/2&&i+j<=n-1)){
-            System.out.print("*");
-        }else{
-            System.out.print(" ");
+                    System.out.print(" *");
+                } else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.print("   ");
+            //a
+            for (int j = 0; j < n; j++) {
+                if ((j == n / 4 && i >= n / 4) ||
+                    (j == 3 * n / 4 && i >= n / 4) ||
+                    (i == n / 2 && j >= n / 4 && j <= 3 * n / 4) ||
+                    (i + j == n / 2 && i - j <= 0) ||
+                    (i - j == -n / 2 && i + j <= n - 1)) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
         }
     }
-
-    System.out.print("   ");
-
-    // S
-    int ns = 16; 
-    for(int j=0;j<ns;j++){
-        if((i-j==0&&j>=ns/4&&j<=3*ns/4)||(i+j==ns/2&&j>=ns/4&&j<=ns/2)||(i-j==-ns/2&&j>=ns/2&&j<=3*ns/4)||(i+j==3*ns/2&&j>=ns/2&&j<=3*ns/4)||(i-j==ns/2&&j>=ns/4&&j<=ns/2)){
-            System.out.print(" *");
-        }else{
-            System.out.print("  ");
-        }
-    }
-
-    System.out.print("   ");
-
-    // M
-    for(int j=0;j<n;j++){
-        if((j==0)||(j==n-1)||(i-j==0&&j<=n/2)||(i+j==n-1&&j>=n/2)){
-            System.out.print(" *");
-        }else{
-            System.out.print("  ");
-        }
-    }
-
-    System.out.print("   ");
-
-    // A again
-    for(int j=0;j<n;j++){
-        if((j==n/4&&i>=n/4)||(j==3*n/4&&i>=n/4)||(i==n/2&&j>=n/4&&j<=3*n/4)||(i+j==n/2&&i-j<=0)|| (i-j==-n/2&&i+j<=n-1)){
-            System.out.print("*");
-        }else{
-            System.out.print(" ");
-        }
-    }
-
-    System.out.println();
-}
-
-}
 }
 
