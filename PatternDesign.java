@@ -1,4 +1,6 @@
-public class New {
+public class PatternDesign
+
+{
     static void _1(){
         int n=7;
             for(int i=0;i<n;i++){
